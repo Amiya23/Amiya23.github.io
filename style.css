@@ -439,14 +439,15 @@ nav{
 padding:15px 0;
 }
 
-.logo{
+nav h2{
 font-size:18px;
-margin-right:15px;
+margin-right:20px;
 }
 
 nav ul{
-gap:10px;
-font-size:12px;
+gap:8px;
+font-size:11px;
 }
 
+}
 }
