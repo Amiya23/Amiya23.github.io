@@ -15,13 +15,7 @@ html {
 body {
   font-family: "Inter", sans-serif;
 
-  background:
-    linear-gradient(
-      180deg,
-      #0b1120 0%,
-      #111827 50%,
-      #0f172a 100%
-    );
+  background: linear-gradient(180deg, #0b1120 0%, #111827 50%, #0f172a 100%);
 
   color: #e5e7eb;
   line-height: 1.6;
@@ -56,7 +50,6 @@ a {
   text-decoration: none;
 }
 
-
 /* =========================================================
    LAYOUT
 ========================================================= */
@@ -82,7 +75,6 @@ section {
 
   text-align: center;
 }
-
 
 /* =========================================================
    NAVIGATION
@@ -154,7 +146,6 @@ nav a:hover::after {
   width: 100%;
 }
 
-
 /* =========================================================
    BUTTONS
 ========================================================= */
@@ -184,8 +175,7 @@ nav a:hover::after {
 .btn:hover {
   transform: translateY(-3px);
 
-  box-shadow:
-    0 10px 25px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
 }
 
 .btn-secondary {
@@ -201,7 +191,6 @@ nav a:hover::after {
 
   color: #ffffff;
 }
-
 
 /* =========================================================
    HOME
@@ -221,7 +210,6 @@ nav a:hover::after {
 
   overflow: hidden;
 }
-
 
 /* Decorative background */
 
@@ -265,7 +253,6 @@ nav a:hover::after {
   pointer-events: none;
 }
 
-
 /* Home container */
 
 .home-container {
@@ -294,7 +281,6 @@ nav a:hover::after {
 
   border-radius: 20px;
 }
-
 
 /* =========================================================
    HOME PROFILE
@@ -360,7 +346,6 @@ nav a:hover::after {
   font-size: 14px;
 }
 
-
 /* =========================================================
    HOME DETAILS
 ========================================================= */
@@ -420,7 +405,6 @@ nav a:hover::after {
   line-height: 1.7;
 }
 
-
 /* =========================================================
    HOME INFORMATION
 ========================================================= */
@@ -455,7 +439,6 @@ nav a:hover::after {
   line-height: 1.7;
 }
 
-
 /* =========================================================
    HOME BUTTONS
 ========================================================= */
@@ -474,7 +457,6 @@ nav a:hover::after {
   margin-top: 0;
 }
 
-
 /* =========================================================
    GENERAL GRID & CARDS
 ========================================================= */
@@ -482,17 +464,13 @@ nav a:hover::after {
 .grid {
   display: grid;
 
-  grid-template-columns:
-    repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 
   gap: 20px;
 }
 
 #repo-container {
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(280px, 360px)
-  );
+  grid-template-columns: repeat(auto-fit, minmax(280px, 360px));
 
   justify-content: center;
 }
@@ -520,10 +498,8 @@ nav a:hover::after {
 .card:hover {
   transform: translateY(-6px);
 
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
-
 
 /* =========================================================
    SKILLS
@@ -558,7 +534,6 @@ nav a:hover::after {
 
   transform: translateY(-4px);
 }
-
 
 /* =========================================================
    PROJECTS
@@ -675,7 +650,6 @@ nav a:hover::after {
   text-decoration: underline;
 }
 
-
 /* =========================================================
    FEATURED PROJECT
 ========================================================= */
@@ -748,7 +722,6 @@ nav a:hover::after {
   opacity: 0.85;
 }
 
-
 /* =========================================================
    CONTACT
 ========================================================= */
@@ -801,10 +774,8 @@ nav a:hover::after {
 
   background: #6366f1;
 
-  box-shadow:
-    0 10px 25px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
 }
-
 
 /* =========================================================
    FOOTER
@@ -820,13 +791,11 @@ footer {
   font-size: 14px;
 }
 
-
 /* =========================================================
    RESPONSIVE
 ========================================================= */
 
 @media (max-width: 768px) {
-
   /* -------------------------------------------------------
      Navigation
   ------------------------------------------------------- */
@@ -846,7 +815,6 @@ footer {
 
     font-size: 11px;
   }
-
 
   /* -------------------------------------------------------
      Home
@@ -872,7 +840,6 @@ footer {
     border-radius: 18px;
   }
 
-
   /* -------------------------------------------------------
      Profile
   ------------------------------------------------------- */
@@ -894,8 +861,7 @@ footer {
 
     border-right: none;
 
-    border-bottom:
-      1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .home-profile img {
@@ -957,7 +923,6 @@ footer {
     line-height: 1.5;
   }
 
-
   /* -------------------------------------------------------
      Details
   ------------------------------------------------------- */
@@ -977,7 +942,6 @@ footer {
 
     line-height: 1.6;
   }
-
 
   /* -------------------------------------------------------
      Education + Leadership
@@ -1011,7 +975,6 @@ footer {
     overflow-wrap: break-word;
   }
 
-
   /* -------------------------------------------------------
      Buttons
   ------------------------------------------------------- */
@@ -1036,7 +999,6 @@ footer {
     text-align: center;
   }
 
-
   /* -------------------------------------------------------
      Featured Project
   ------------------------------------------------------- */
@@ -1057,7 +1019,6 @@ footer {
     font-size: 24px;
   }
 
-
   /* -------------------------------------------------------
      Sections
   ------------------------------------------------------- */
@@ -1069,7 +1030,6 @@ footer {
   .section-title {
     font-size: 26px;
   }
-
 
   /* -------------------------------------------------------
      Contact
@@ -1087,13 +1047,11 @@ footer {
   }
 }
 
-
 /* =========================================================
    SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 400px) {
-
   /* Navigation */
 
   nav {
@@ -1110,7 +1068,6 @@ footer {
     font-size: 10px;
   }
 
-
   /* Home */
 
   .home-section {
@@ -1122,7 +1079,6 @@ footer {
   .home-container {
     padding: 20px;
   }
-
 
   /* Profile */
 
@@ -1145,7 +1101,6 @@ footer {
     font-size: 11px;
   }
 
-
   /* Details */
 
   .home-introduction p {
@@ -1159,7 +1114,6 @@ footer {
   .home-info-item p {
     font-size: 12px;
   }
-
 
   /* Featured */
 
@@ -1212,20 +1166,17 @@ footer {
   }
 }
 
-
 /* Navbar */
 
 nav {
   animation: fadeDown 0.7s ease-out both;
 }
 
-
 /* Main Home Card */
 
 .home-container {
   animation: fadeUp 0.8s ease-out 0.15s both;
 }
-
 
 /* Profile */
 
@@ -1237,13 +1188,11 @@ nav {
   animation: fadeUp 0.7s ease-out 0.55s both;
 }
 
-
 /* About */
 
 .home-introduction {
   animation: fadeUp 0.7s ease-out 0.65s both;
 }
-
 
 /* Education & Leadership */
 
@@ -1251,13 +1200,11 @@ nav {
   animation: fadeUp 0.7s ease-out 0.75s both;
 }
 
-
 /* Buttons */
 
 .home-buttons {
   animation: fadeUp 0.7s ease-out 0.85s both;
 }
-
 
 /* Accessibility */
 
@@ -1327,8 +1274,7 @@ nav {
 
   color: #ffffff;
 
-  box-shadow:
-    0 8px 20px rgba(99, 102, 241, 0.25);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
 }
 
 .no-projects {
@@ -1356,10 +1302,8 @@ nav {
 .home-profile img:hover {
   transform: scale(1.05);
 
-  box-shadow:
-    0 8px 25px rgba(99, 102, 241, 0.35);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.35);
 }
-
 
 /* Featured Project Card */
 
@@ -1373,25 +1317,20 @@ nav {
 .featured-card:hover {
   transform: translateY(-6px);
 
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
 
-  border-color:
-    rgba(129, 140, 248, 0.35);
+  border-color: rgba(129, 140, 248, 0.35);
 }
-
 
 /* Featured Project Image */
 
 .featured-image img {
-  transition:
-    transform 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
 .featured-card:hover .featured-image img {
   transform: scale(1.02);
 }
-
 
 /* Project Cards */
 
@@ -1405,19 +1344,15 @@ nav {
 .card:hover {
   transform: translateY(-6px);
 
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 
-  border-color:
-    rgba(129, 140, 248, 0.25);
+  border-color: rgba(129, 140, 248, 0.25);
 }
-
 
 /* Project Images */
 
 .project-img {
-  transition:
-    transform 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
 .card:hover .project-img {
