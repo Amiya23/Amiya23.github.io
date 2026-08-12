@@ -34,57 +34,71 @@
         </h2>
 
         <ul>
-          <li><a href="#about">About</a></li>
+          <li><a href="#home">Home</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#featured-project">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
-      <section id="home" class="hero">
-        <img src="images/1772605278661.jpg" alt="profile" />
+      <section id="home" class="home-section">
+        <div class="home-container">
+          <!-- Profile -->
+          <div class="home-profile">
+            <img src="images/1772605278661.jpg" alt="Dhiandra Pradika" />
 
-        <h1>Dhiandra Irsyad Khalish Athallah Pradika</h1>
+            <h1>Dhiandra Pradika</h1>
 
-        <p>Informatics Student & Software Developer passionate about building modern software experiences across web and mobile platforms, while exploring game development.</p>
+            <p class="home-role">Software Developer</p>
 
-        <a class="btn" href="#featured-project">View My Work</a>
+            <p class="home-location">Informatics Student</p>
+          </div>
 
-        <a class="btn btn-secondary" href="assets/CV_Dhiandra Pradika.pdf" download="CV_Dhiandra Pradika.pdf"> Download CV </a>
-      </section>
+          <!-- Main Information -->
+          <div class="home-details">
+            <div class="home-introduction">
+              <span class="home-label"> ABOUT </span>
 
-      <section id="about">
-        <h2 class="section-title">About Me</h2>
+              <p>
+                Informatics student with a strong interest in software development, particularly Web Development and Mobile Development. Experienced in building applications using Laravel, PHP, JavaScript, Kotlin, and Jetpack Compose
+                through academic and personal projects.
+              </p>
+            </div>
 
-        <p class="about-text">
-          Informatics student with a strong interest in software development, particularly Web Development and Mobile Development. Experienced in building applications using technologies such as Laravel, PHP, JavaScript, Kotlin, and Jetpack
-          Compose through academic and personal projects. Also interested in exploring Game Development and creating interactive digital experiences.
-        </p>
-      </section>
+            <div class="home-info">
+              <div class="home-info-item">
+                <span class="home-label"> EDUCATION </span>
 
-      <section id="education">
-        <h2 class="section-title">Education</h2>
+                <h3>Gunadarma University</h3>
 
-        <div class="card">
-          <h3>Gunadarma University</h3>
+                <p>
+                  Bachelor of Informatics
+                  <br />
+                  2023 - Present
+                  <br />
+                  GPA: 3.72 / 4.00
+                </p>
+              </div>
 
-          <p>
-            Bachelor of Informatics (2023 - Present)
-            <br />
-            GPA: 3.72 / 4.00
-          </p>
-        </div>
-      </section>
+              <div class="home-info-item">
+                <span class="home-label"> LEADERSHIP </span>
 
-      <section id="experience">
-        <h2 class="section-title">Leadership & Activities</h2>
+                <h3>Valorant Division Coordinator</h3>
 
-        <div class="card">
-          <h3>Valorant Division Coordinator</h3>
+                <p>
+                  Gunadarma Esports Championship
+                  <br />
+                  2024
+                </p>
+              </div>
+            </div>
 
-          <p>Gunadarma Esports Championship • 2024</p>
+            <div class="home-buttons">
+              <a class="btn" href="#projects"> View My Work </a>
 
-          <p>Coordinated tournament operations, managed schedules, and collaborated with committee members to ensure smooth event execution.</p>
+              <a class="btn btn-secondary" href="assets/CV_Dhiandra Pradika.pdf" download="CV_Dhiandra Pradika.pdf"> Download CV </a>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -166,15 +180,15 @@
             </p>
 
             <div class="project-meta">
-  <span class="project-category">Mobile Development</span>
+              <span class="project-category">Mobile Development</span>
 
-  <div class="project-badges">
-    <span class="badge">Kotlin</span>
-    <span class="badge">Jetpack Compose</span>
-    <span class="badge">Room</span>
-    <span class="badge">MVVM</span>
-  </div>
-</div>
+              <div class="project-badges">
+                <span class="badge">Kotlin</span>
+                <span class="badge">Jetpack Compose</span>
+                <span class="badge">Room</span>
+                <span class="badge">MVVM</span>
+              </div>
+            </div>
 
             <div class="featured-buttons">
               <a class="btn" href="https://github.com/Amiya23/MoneyMate" target="_blank" rel="noopener noreferrer"> View Repository </a>
@@ -186,13 +200,59 @@
       <section id="projects">
         <h2 class="section-title">Projects</h2>
 
+        <div class="project-filters">
+          <button class="project-filter active" data-filter="all">All</button>
+
+          <button class="project-filter" data-filter="Web Development">Web Development</button>
+
+          <button class="project-filter" data-filter="Mobile Development">Mobile Development</button>
+        </div>
+
         <div id="repo-container" class="grid"></div>
       </section>
 
       <script>
         const username = "Amiya23";
 
-        const featuredRepos = ["pawonku_web", "vehicle-tracker", "InventoryPro"];
+        const featuredRepos = ["pawonku_web", "vehicle-tracker", "InventoryPro", "MoneyMate"];
+
+        const repoTech = {
+          pawonku_web: {
+            category: "Web Development",
+            tech: ["PHP", "MySQL", "Bootstrap"],
+            image: "preview.jpeg",
+          },
+
+          "vehicle-tracker": {
+            category: "Web Development",
+            tech: ["Laravel", "MySQL", "Tailwind"],
+            image: "preview.jpeg",
+          },
+
+          InventoryPro: {
+            category: "Web Development",
+            tech: ["Laravel", "MySQL", "Tailwind"],
+            image: "preview.jpeg",
+          },
+
+          MoneyMate: {
+            category: "Mobile Development",
+            tech: ["Kotlin", "Jetpack Compose", "Room", "MVVM"],
+            image: "preview.jpg",
+          },
+        };
+
+        const repoImages = {
+          pawonku_web: "https://raw.githubusercontent.com/Amiya23/pawonku_web/main/preview.jpeg",
+
+          "vehicle-tracker": "https://raw.githubusercontent.com/Amiya23/vehicle-tracker/main/preview.jpeg",
+
+          InventoryPro: "https://raw.githubusercontent.com/Amiya23/InventoryPro/main/preview.jpeg",
+
+          MoneyMate: "https://raw.githubusercontent.com/Amiya23/MoneyMate/master/preview.jpg",
+        };
+
+        let currentFilter = "all";
 
         async function loadRepos() {
           const container = document.getElementById("repo-container");
@@ -204,70 +264,89 @@
 
             repos.sort((a, b) => featuredRepos.indexOf(a.name) - featuredRepos.indexOf(b.name));
 
-            repos
+            const filteredRepos = repos
               .filter((repo) => !repo.fork && featuredRepos.includes(repo.name))
-              .forEach((repo) => {
-                const card = document.createElement("div");
-                card.className = "card";
-                const category = repoCategory[repo.name] || "Software Development";
+              .filter((repo) => {
+                if (currentFilter === "all") {
+                  return true;
+                }
 
-                card.innerHTML = `
-
-<div class="project-image">
-
-<img
-class="project-img"
-src="https://raw.githubusercontent.com/${username}/${repo.name}/main/preview.jpeg"
-onerror="this.remove()">
-
-</div>
-
-<div class="card-content">
-
-<h3>${repo.name}</h3>
-
-<span class="project-category">
-  ${category}
-</span>
-
-<p>${repo.description ?? "No description provided."}</p>
-
-<div class="project-badges">
-    ${(repoTech[repo.name] || []).map((tech) => `<span class="badge">${tech}</span>`).join("")}
-</div>
-
-<a class="project-link"
-href="${repo.html_url}"
-target="_blank">
-
-View Repository
-
-</a>
-
-</div>
-
-`;
-
-                container.appendChild(card);
+                return repoTech[repo.name]?.category === currentFilter;
               });
+
+            container.innerHTML = "";
+
+            filteredRepos.forEach((repo) => {
+              const project = repoTech[repo.name];
+
+              const card = document.createElement("div");
+
+              card.className = "card";
+
+              card.innerHTML = `
+          <div class="project-image">
+
+            <img
+              class="project-img"
+              src="${repoImages[repo.name]}"
+              alt="${repo.name} preview"
+              onerror="this.parentElement.style.display='none';"
+            >
+
+          </div>
+
+          <div class="card-content">
+
+            <span class="project-category">
+              ${project.category}
+            </span>
+
+            <h3>${repo.name}</h3>
+
+            <p>
+              ${repo.description ?? "No description provided."}
+            </p>
+
+            <div class="project-badges">
+              ${project.tech.map((tech) => `<span class="badge">${tech}</span>`).join("")}
+            </div>
+
+            <a
+              class="project-link"
+              href="${repo.html_url}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Repository
+            </a>
+
+          </div>
+        `;
+
+              container.appendChild(card);
+            });
           } catch (error) {
             container.innerHTML = "Failed to load repositories.";
+
             console.error(error);
           }
         }
 
-        const repoTech = {
-          pawonku_web: ["PHP", "MySQL", "Bootstrap"],
-          "vehicle-tracker": ["Laravel", "MySQL", "Tailwind"],
-          InventoryPro: ["Laravel", "MySQL", "Tailwind"],
-        };
+        /* Project Filter */
 
-        const repoCategory = {
-          InventoryPro: "Web Development",
-          "vehicle-tracker": "Web Development",
-          pawonku_web: "Web Development",
-          MoneyMate: "Mobile Development",
-        };
+        document.querySelectorAll(".project-filter").forEach((button) => {
+          button.addEventListener("click", () => {
+            document.querySelectorAll(".project-filter").forEach((btn) => {
+              btn.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            currentFilter = button.dataset.filter;
+
+            loadRepos();
+          });
+        });
 
         loadRepos();
       </script>
