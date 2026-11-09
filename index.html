@@ -1,594 +1,454 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+<script>document.documentElement.className+=" js";</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dhiandra Pradika, full-stack developer in East Jakarta</title>
+<meta name="description" content="Full-stack developer in East Jakarta. Seven public projects: five Laravel, Next.js and PHP web apps, and two offline-first Android apps in Kotlin, each with a preview and source.">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="images/favicon.ico" sizes="32x32">
+<link rel="icon" href="images/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="manifest" href="images/site.webmanifest">
+<meta property="og:title" content="Dhiandra Pradika, full-stack developer in East Jakarta">
+<meta property="og:description" content="Seven public projects: five Laravel, Next.js and PHP web apps, two offline Kotlin apps. Preview and source for each.">
+<meta property="og:image" content="https://amiya23.github.io/images/og-preview.png">
+<meta property="og:url" content="https://amiya23.github.io/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Schibsted+Grotesk:wght@400..600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f9f6ef; --card:#fffdf8; --lilac:#efe9f8; --lilac-line:#e2d9f2;
+  --indigo:#251c42; --ink:#221a3c; --muted:#4f4767; --gold:#7d5f1a; --violet:#533791;
+  --hair:#e6dfd0; --serif:"Fraunces",Georgia,serif; --sans:"Schibsted Grotesk",system-ui,sans-serif;
+  --wrapw:1200px; --pad:clamp(20px,4vw,40px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,p,ul,figure{margin:0;padding:0}
+ul{list-style:none}
+.wrap{width:min(100% - 2 * var(--pad), var(--wrapw));margin-inline:auto}
+.eyebrow{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.skip{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.skip:focus{width:auto;height:auto;clip-path:none;left:16px;top:16px;z-index:60;background:var(--indigo);color:var(--cream);padding:10px 16px;border-radius:8px}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+/* header */
+.nav{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--cream) 92%,transparent);backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid transparent;transition:border-color .2s ease}
+.nav.is-stuck{border-bottom-color:var(--hair)}
+.nav__in{display:flex;align-items:center;gap:28px;height:68px}
+.brand{font-family:var(--serif);font-size:19px;letter-spacing:-.01em}
+.nav__links{display:flex;gap:26px;margin-left:auto;font-size:15px}
+.nav__links a{color:var(--muted);padding:6px 0;border-bottom:1px solid transparent;transition:color .18s ease,border-color .18s ease}
+.nav__links a:hover{color:var(--ink);border-bottom-color:var(--gold)}
+.nav__links a.is-active{color:var(--ink);border-bottom-color:var(--gold)}
+.nav__cta{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 18px;border-radius:999px;background:var(--indigo);color:#f7f1e6;font-size:14px;font-weight:500;transition:transform .18s ease,background .18s ease}
+.nav__cta:hover{background:#332759;transform:translateY(-1px)}
+.burger{display:none;margin-left:auto;width:44px;height:44px;place-items:center;background:none;border:1px solid var(--hair);border-radius:10px;color:var(--ink);cursor:pointer}
 
-    <title>Dhiandra Pradika | Software Developer</title>
+/* hero */
+.hero{min-height:calc(100svh - 68px);display:grid;grid-template-rows:1fr auto;padding:clamp(40px,6vw,76px) 0 0}
+.hero__in{align-self:center}
+.hero-facts{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 34px;padding-block:16px calc(20px + env(safe-area-inset-bottom))}
+.fact{display:flex;align-items:baseline;gap:9px}
+.fact .n{font-family:var(--serif);font-size:32px;line-height:1;color:var(--ink)}
+.fact .k{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.fact .k--dim{color:#8d86a6}
+.fact--end{margin-left:auto;align-items:center;gap:8px;color:var(--gold);transition:gap .18s ease}
+.fact--end .k{color:var(--gold)}
+.fact--end:hover{gap:12px}
+.hero__in{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:clamp(28px,3.4vw,48px);align-items:start}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(38px,5.1vw,66px);line-height:1.03;letter-spacing:-.02em;max-width:24ch;margin-top:14px;text-wrap:balance}
+.lead{margin-top:26px;max-width:54ch;color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-flex;align-items:center;gap:9px;height:48px;padding:0 24px;border-radius:999px;font-size:15px;font-weight:500;border:1px solid transparent;transition:transform .18s ease,background .18s ease,border-color .18s ease,color .18s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn--solid{background:var(--indigo);color:#f7f1e6}
+.btn--solid:hover{background:#332759}
+.btn--ghost{border-color:#c2b59a;color:var(--ink);background:var(--card)}
+.btn--ghost:hover{border-color:var(--ink);background:#fff}
+.btn--gold{background:#e7c877;color:#2a1f08}
+.btn--gold:hover{background:#f0d489}
+.ar{width:13px;height:13px;flex:none;display:block}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:38px}
+.hero__avail{display:flex;align-items:center;gap:9px;margin-top:26px;font-size:14px;color:var(--muted)}
+.hero__cv{display:inline-flex;align-items:center;gap:6px;margin-left:auto;color:var(--ink);border-bottom:1px solid var(--gold);padding-bottom:1px;transition:gap .18s ease}
+.hero__cv:hover{gap:10px}
+.hero__avail .dot{width:7px;height:7px;border-radius:50%;background:#3f7d4e;flex:none}
+.hero-text{display:flex;flex-direction:column;justify-content:space-between;align-self:stretch}
+.hero-text .chips{padding-top:0}
+.chips li{font-size:12.5px;color:var(--muted);border:1px solid var(--hair);border-radius:999px;padding:4px 11px;background:var(--card)}
+.hero-side{display:flex;flex-direction:column;gap:22px;justify-self:end;width:100%;max-width:320px}
+.medallion{margin:0}
+.medallion img{display:block;width:100%;aspect-ratio:5/6;object-fit:cover;object-position:50% 18%;border-radius:14px;border:1px solid #d9cbaa;background:#eae5da}
+.side-meta{display:grid;gap:14px;margin:0;padding-top:16px;border-top:1px solid var(--hair)}
+.side-meta div{display:grid;gap:2px}
+.side-meta dt{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.side-meta dd{margin:0;font-size:14px;line-height:1.5;color:var(--muted)}
 
-    <meta property="og:title" content="Dhiandra Pradika | Software Developer Portfolio" />
+/* section heads */
+.section{border-top:1px solid var(--hair);padding:clamp(44px,5vw,64px) 0 clamp(52px,6.4vw,88px)}
+.section--lilac{background:var(--lilac);border-block:1px solid var(--lilac-line);padding-top:clamp(52px,5.6vw,76px);padding-bottom:clamp(44px,5vw,68px)}
+.sec-head{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:flex-end;justify-content:space-between;margin-bottom:clamp(28px,3.4vw,44px)}
+.section--lilac .sec-head{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:flex-end;justify-content:space-between;margin-bottom:clamp(28px,3.4vw,44px)}
+.sec-head h2{font-family:var(--serif);font-weight:500;font-size:clamp(30px,3.4vw,42px);line-height:1;letter-spacing:-.015em}
+.sec-k{font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px}
+.sec-note{color:var(--muted);font-size:15px;justify-self:end;text-align:right}
 
-    <meta property="og:description" content="Software Developer portfolio showcasing web, mobile, and game development projects." />
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(34px,3.4vw,50px) clamp(20px,2.6vw,34px)}
+.cards--two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cards li{display:flex}
+.card a{display:flex;flex-direction:column;height:100%;border-radius:14px;transition:transform .22s ease}
+.card a:hover{transform:translateY(-3px)}
+.shot{border-radius:14px;overflow:hidden;border:1px solid var(--lilac-line);background:#efe9dc}
+.shot .bar{display:flex;align-items:center;gap:5px;height:23px;padding-left:11px;background:#efe9dc}
+.shot .bar i{display:block;width:6px;height:6px;border-radius:50%;background:#c6b9a1}
+.shot img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.card a:hover .shot img{transform:scale(1.03)}
+.card h3{display:flex;align-items:center;gap:10px;margin-top:16px;font-size:18px;font-weight:600;letter-spacing:-.01em}
+.card h3 .ar{margin-left:auto;color:var(--gold);transition:transform .2s ease}
+.card a:hover h3 .ar{transform:translateX(4px)}
+.card a:hover h3{color:var(--violet)}
+.card a:hover .shot{border-color:#cdbfe6}
+.card p{margin-top:6px;color:var(--muted);font-size:15px;line-height:1.55;max-width:38ch}
+.card .stack{margin-top:auto;padding-top:12px;font-size:13px;color:#5f4a10;letter-spacing:.02em}
+.more a{display:flex;flex-direction:column;justify-content:space-between;height:100%;min-height:220px;padding:24px;border:1px solid var(--lilac-line);border-radius:14px;background:var(--surface);transition:transform .22s ease,border-color .22s ease}
+.more a:hover{transform:translateY(-3px);border-color:#cdbfe6}
+.more-k{font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+.more-t{margin-top:0;font-family:var(--serif);font-size:22px;line-height:1.25;letter-spacing:-.01em;max-width:16ch}
+.more-a{display:flex;align-items:center;gap:8px;margin-top:0;font-size:14px;color:#4b3a86}
 
-    <meta property="og:image" content="https://amiya23.github.io/images/og-preview.png" />
+/* contact band */
+.contact{background:var(--indigo);color:#f7f1e6;padding:clamp(56px,7vw,92px) 0 clamp(40px,4.4vw,60px)}
+.contact__in{display:grid;grid-template-columns:1fr 1fr;gap:32px 24px;align-items:start}
+.contact__card{padding-top:6px}
+.sec-k--light{color:#c0b3da}
+.contact__label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#c0b3da;margin:0}
+.contact__mail{display:inline-block;margin-top:8px;font-family:var(--serif);font-size:clamp(20px,2vw,26px);color:#f7f1e6;border-bottom:1px solid #6a5a9c;transition:border-color .18s ease,color .18s ease}
+.contact__mail:hover{color:#f0d489;border-bottom-color:#e7c877}
+.contact__meta{margin-top:10px;font-size:13px;color:#c0b3da}
+.contact h2{font-family:var(--serif);font-weight:500;font-size:clamp(32px,4vw,50px);line-height:1.02;letter-spacing:-.02em}
+.contact p{margin-top:14px;color:#cdc3e2;max-width:46ch}
+.contact .actions{margin-top:26px}
+.contact .actions .btn--ghost{background:transparent;border-color:#c9bda3;color:#f7f1e6;font-weight:500}
+.contact .actions .btn--ghost:hover{background:#332759;border-color:#f0d489}
+.foot{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:18px 32px;align-items:baseline;justify-content:space-between;margin-top:clamp(52px,6vw,76px);padding-top:0;font-size:14px;color:#c3b8dc}
+.foot nav{display:flex;flex-wrap:wrap;gap:22px}
+.foot a{color:#e2d8f6;border-bottom:1px solid transparent;transition:border-color .18s ease}
+.foot a:hover{border-bottom-color:#e7c877}
+a:focus-visible,button:focus-visible{outline:2px solid var(--violet);outline-offset:3px;border-radius:4px}
+.contact a:focus-visible{outline-color:#e7c877}
 
-    <meta property="og:url" content="https://amiya23.github.io/" />
 
-    <meta property="og:type" content="website" />
+.js :is(.hero,.section,.contact) [data-rise]{opacity:0;transform:translateY(18px)}
+.js :is(.hero,.section,.contact) [data-rise].in{
+  opacity:1;transform:none;
+  transition:opacity .74s cubic-bezier(.16,.84,.44,1),transform .74s cubic-bezier(.16,.84,.44,1);
+  transition-delay:calc(var(--d,0) * 70ms)}
+@media (prefers-reduced-motion:reduce){
+  .js :is(.hero,.section,.contact) [data-rise]{opacity:1;transform:none;transition:none}
+}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+@media (max-width:900px){
+  .nav__links{display:none}
+  .nav__links.open{display:flex;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--cream);border-bottom:1px solid var(--hair);padding:8px var(--pad) 16px;margin:0}
+  .nav__links.open a{padding:12px 0;border-bottom:1px solid var(--hair)}
+  .burger{display:inline-grid}
+  .nav__cta{margin-left:0}
+  .hero__in{grid-template-columns:1fr;gap:32px}
+  .hero__in{grid-template-columns:1fr;gap:30px}
+  .hero-side{justify-self:start;max-width:420px;flex-direction:row;align-items:flex-start;gap:20px}
+  .medallion{width:150px;flex:none}
+  .cards,.cards--two{grid-template-columns:1fr 1fr}
+  .more{grid-column:span 2}
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .cards,.cards--two{grid-template-columns:1fr}
+  .more{grid-column:span 1}
+  .more a{min-height:0;padding:22px;gap:26px}
+  .sec-head{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:flex-end;justify-content:space-between;margin-bottom:clamp(28px,3.4vw,44px)}
+  .sec-note{grid-column:1/-1;justify-self:start;text-align:left}
+  .hero{min-height:calc(100svh - 68px);padding-top:28px;padding-bottom:0}
+  .hero-facts{gap:10px 22px;padding-block:22px 18px;margin-top:4px}
+  .fact .n{font-size:21px}
+  .fact--end{margin-left:0}
+  .medallion{width:118px}
+  .chips{gap:8px}
+  .chip{font-size:12.5px;padding:5px 10px}
+  .actions .btn{width:100%;justify-content:center}
+  .contact .actions{width:100%}
+  .contact__in{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .card a:hover{transform:none}
+  .card a:hover .shot img{transform:none}
+}
+</style>
+</head>
+<body>
+<header class="nav" id="nav">
+  <a class="skip" href="#web">Skip to the work</a>
+  <div class="wrap nav__in">
+    <a class="brand" href="#top">Dhiandra Pradika</a>
+    <nav class="nav__links" id="menu" aria-label="Sections">
+      <a href="#web">Web</a>
+      <a href="#mobile">Mobile</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="style.css" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-    <link rel="icon" href="images/favicon.ico" />
-  </head>
-
-  <body>
-    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
-
-    <header class="site-header">
-      <div class="container nav-inner">
-        <a class="nav-brand" href="#home">Portofolio</a>
-
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#featured-project">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+<main id="top">
+  <section class="hero" aria-labelledby="h">
+    <div class="wrap hero__in">
+      <div class="hero-text">
+        <p class="eyebrow" data-rise>Full-stack &middot; Web and Android</p>
+        <h1 id="h" data-rise>Full-stack developer in East Jakarta, Indonesia</h1>
+        <p class="lead" data-rise>Five web apps in Laravel, Next.js and PHP, plus two offline Android apps in Kotlin, all public. I build the database schema, authentication and the deployment myself.</p>
+        <div class="actions" data-rise>
+          <a class="btn btn--gold" href="mailto:pradikabizz@gmail.com">Email me<svg class="ar" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="btn btn--ghost" href="#web">Browse every project</a>
+        </div>
+        <p class="hero__avail" data-rise><span class="dot" aria-hidden="true"></span>Open to internship or junior developer roles in Jakarta or remote.<a class="hero__cv" href="assets/CV_Dhiandra_Pradika.pdf">CV (PDF)<svg class="ar" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></p>
+        <ul class="chips" aria-label="Tools" data-rise>
+          <li>Laravel</li><li>PHP</li><li>Kotlin</li><li>Jetpack Compose</li><li>MySQL</li><li>Tailwind CSS</li>
         </ul>
       </div>
-    </header>
-
-    <main>
-      <section id="home" class="home-section">
-        <div class="container">
-          <div class="hero-grid">
-            <div class="hero-main">
-              <p class="eyebrow">About</p>
-
-              <h1 class="hero-name"><span>Dhiandra</span> <span>Pradika</span></h1>
-
-              <div class="hero-meta">
-                <p class="hero-role">Software Developer</p>
-
-                <p class="hero-location">Informatics Student</p>
-              </div>
-
-              <div class="hero-about">
-                <span class="label">About</span>
-
-                <p>
-                  Informatics student with a strong interest in software development, particularly Web Development and Mobile Development. Experienced in building applications using Laravel, PHP, JavaScript, Kotlin, and Jetpack Compose
-                  through academic and personal projects.
-                </p>
-              </div>
-
-              <div class="home-buttons">
-                <a class="btn" href="#projects"> View My Work </a>
-
-                <a class="btn btn-secondary" href="assets/CV_Dhiandra_Pradika.pdf" download="CV_Dhiandra_Pradika.pdf"> Download CV </a>
-              </div>
-            </div>
-
-            <figure class="portrait">
-              <img src="images/1772605278661.jpg" alt="Dhiandra Pradika" decoding="async" />
-            </figure>
-
-            <div class="hero-info">
-              <div class="info-item">
-                <span class="label">Education</span>
-
-                <h3>Gunadarma University</h3>
-
-                <p>
-                  Bachelor of Informatics
-                  <br />
-                  2023 - Present
-                  <br />
-                  GPA: 3.72 / 4.00
-                </p>
-              </div>
-
-              <div class="info-item">
-                <span class="label">Leadership</span>
-
-                <h3>Valorant Division Coordinator</h3>
-
-                <p>
-                  Gunadarma Esports Championship
-                  <br />
-                  2024
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="skills">
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <span class="section-index">01</span>
-
-            <h2 class="section-title">Skills</h2>
-          </div>
-
-          <ul class="skill-list">
-            <li class="skill-row" data-reveal>
-              <div class="skill-body">
-                <h3>Web Development</h3>
-
-                <p>HTML5, CSS3, JavaScript, React, Next.js, PHP, Laravel, Tailwind CSS</p>
-              </div>
-
-              <div class="skill-icons">
-                <i class="fa-brands fa-html5" title="HTML5"></i>
-                <i class="fa-brands fa-css3-alt" title="CSS3"></i>
-                <i class="fa-brands fa-js" title="JavaScript"></i>
-                <i class="fa-brands fa-php" title="PHP"></i>
-              </div>
-            </li>
-
-            <li class="skill-row" data-reveal>
-              <div class="skill-body">
-                <h3>Mobile Development</h3>
-
-                <p>Kotlin, Jetpack Compose, Android, Room, MVVM</p>
-              </div>
-
-              <div class="skill-icons">
-                <i class="fa-brands fa-android" title="Android"></i>
-              </div>
-            </li>
-
-            <li class="skill-row" data-reveal>
-              <div class="skill-body">
-                <h3>Backend &amp; Database</h3>
-
-                <p>Laravel, REST API, MySQL, PostgreSQL, Supabase</p>
-              </div>
-
-              <div class="skill-icons">
-                <i class="fa-solid fa-server" title="Backend"></i>
-                <i class="fa-solid fa-database" title="Database"></i>
-              </div>
-            </li>
-
-            <li class="skill-row" data-reveal>
-              <div class="skill-body">
-                <h3>Tools</h3>
-
-                <p>Git, GitHub, Postman, VS Code</p>
-              </div>
-
-              <div class="skill-icons">
-                <i class="fa-brands fa-git-alt" title="Git"></i>
-                <i class="fa-brands fa-github" title="GitHub"></i>
-              </div>
-            </li>
-
-            <li class="skill-row" data-reveal>
-              <div class="skill-body">
-                <h3>Game Development</h3>
-
-                <p>Game Design &amp; Development Exploration</p>
-              </div>
-
-              <div class="skill-icons">
-                <i class="fa-solid fa-gamepad" title="Game Development"></i>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="featured-project">
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <span class="section-index">02</span>
-
-            <h2 class="section-title">Featured Project</h2>
-          </div>
-
-          <article class="featured-card" data-reveal>
-            <div class="featured-image">
-              <img src="images/moneymate-preview.jpg" alt="MoneyMate" loading="lazy" decoding="async" />
-            </div>
-
-            <div class="featured-content">
-              <span class="project-category">Mobile Development</span>
-
-              <h3>MoneyMate</h3>
-
-              <p>
-                A personal finance management Android application built with Kotlin and Jetpack Compose. MoneyMate allows users to manage wallets, record transactions, monitor balances, and organize their personal finances through a clean and
-                intuitive interface.
-              </p>
-
-              <div class="project-badges">
-                <span class="badge">Kotlin</span>
-                <span class="badge">Jetpack Compose</span>
-                <span class="badge">Room</span>
-                <span class="badge">MVVM</span>
-              </div>
-
-              <div class="featured-buttons">
-                <a class="btn" href="https://github.com/Amiya23/MoneyMate" target="_blank" rel="noopener noreferrer"> View Repository </a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="projects">
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <span class="section-index">03</span>
-
-            <h2 class="section-title">Projects</h2>
-          </div>
-
-          <div class="project-filters" data-reveal>
-            <button class="project-filter active" data-filter="all">All</button>
-
-            <button class="project-filter" data-filter="Web Development">Web Development</button>
-
-            <button class="project-filter" data-filter="Mobile Development">Mobile Development</button>
-          </div>
-
-          <div id="repo-container" class="project-grid"></div>
-        </div>
-      </section>
-
-      <section id="contact" class="contact">
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <span class="section-index">04</span>
-
-            <h2 class="section-title">Contact</h2>
-          </div>
-
-          <div class="contact-inner" data-reveal>
-            <a class="contact-email" href="mailto:pradikabizz@gmail.com">pradikabizz@gmail.com</a>
-
-            <div class="contact-icons">
-              <a href="mailto:pradikabizz@gmail.com" target="_blank" rel="noopener" title="Email" aria-label="Email">
-                <i class="fa-solid fa-envelope"></i>
-              </a>
-
-              <a href="https://github.com/Amiya23" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
-                <i class="fa-brands fa-github"></i>
-              </a>
-
-              <a href="https://www.linkedin.com/in/dhiandra-pradika-6a8a92289/" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
-                <i class="fa-brands fa-linkedin"></i>
-              </a>
-            </div>
-
-            <div class="cv-buttons">
-              <a class="btn btn-secondary" href="assets/CV_Dhiandra_Pradika.pdf" target="_blank" rel="noopener"> View CV </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <p>© <span id="year"></span> Dhiandra Pradika</p>
+      <div class="hero-side" data-rise>
+        <figure class="medallion">
+          <img src="images/1772605278661.jpg" alt="Dhiandra Pradika" width="400" height="400" fetchpriority="high">
+        </figure>
+        <dl class="side-meta">
+          <div><dt>Studying</dt><dd>Informatics at Gunadarma University since 2023</dd></div>
+          <div><dt>Based</dt><dd>Jakarta, Indonesia (GMT+7).</dd></div>
+        </dl>
       </div>
-    </footer>
+    </div>
+    <div class="wrap hero-facts">
+      <p class="fact" data-rise><span class="n">05</span><span class="k">web apps</span></p>
+      <p class="fact" data-rise><span class="n">02</span><span class="k">Android apps</span></p>
+      <a class="fact fact--end" data-rise href="https://github.com/Amiya23"><span class="k">All source on GitHub</span><svg class="ar" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </section>
 
-    <script>
-      const username = "Amiya23";
+  <section class="section" id="web" aria-labelledby="web-h">
+    <div class="wrap">
+      <header class="sec-head" data-rise>
+        <div>
+          <p class="sec-k">01 &mdash; Web apps</p>
+          <h2 id="web-h">Web</h2>
+        </div>
+        <p class="sec-note">Five shipped web apps in Laravel, Next.js and hand-written PHP. Auth, roles, uploads and image handling.</p>
+      </header>
+      <ul class="cards">
+        <li class="card" data-rise>
+          <a href="https://github.com/Amiya23/InventoryPro">
+            <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="images/cards/inventorypro.jpg" alt="InventoryPro dashboard with stock totals and low stock alerts" width="1200" height="750" decoding="async"></div>
+            <h3>InventoryPro<svg class="ar" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></h3>
+            <p>Role-based stock control that refuses negative stock, with low-stock alerts and an audit log of every change.</p>
+            <p class="stack">Laravel 12, Blade, MySQL</p>
+          </a>
+        </li>
+        <li class="card" data-rise>
+          <a href="https://github.com/Amiya23/SecureAuth">
+            <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="images/cards/secureauth.jpg" alt="SecureAuth landing page with sign up and login" width="1200" height="750" decoding="async"></div>
+            <h3>SecureAuth<svg class="ar" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></h3>
+            <p>Auth an admin can operate: login throttled to 5 tries a minute, breached-password checks, and an audit trail that stores the old and new value.</p>
+            <p class="stack">Laravel 13, Breeze, PHPUnit</p>
+          </a>
+        </li>
+        <li class="card" data-rise>
+          <a href="https://github.com/Amiya23/pawonku_web">
+            <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="images/cards/pawonku.jpg" alt="Pawonku menu catalog with prices" width="1200" height="750" decoding="async"></div>
+            <h3>Pawonku<svg class="ar" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></h3>
+            <p>Menu catalogue and admin panel in plain PHP: product CRUD, image uploads, PDO queries, escaped output.</p>
+            <p class="stack">PHP, MySQL</p>
+          </a>
+        </li>
+        <li class="card" data-rise>
+          <a href="https://github.com/Amiya23/karang-taruna-photo-archive">
+            <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="images/cards/karang-taruna.jpg" alt="Karang Taruna photo archive landing page" width="1200" height="750" decoding="async"></div>
+            <h3>Karang Taruna<svg class="ar" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></h3>
+            <p>In production on Vercel: admin uploads, sharp resizing, signed R2 links cached by TTL, and orphan cleanup.</p>
+            <p class="stack">Next.js 15, Supabase, Cloudflare R2</p>
+          </a>
+        </li>
+        <li class="card" data-rise>
+          <a href="https://github.com/Amiya23/test-florist">
+            <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="images/cards/test-florist.jpg" alt="D.R Florist catalog with a rose bouquet" width="1200" height="750" decoding="async"></div>
+            <h3>D.R Florist<svg class="ar" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></h3>
+            <p>Live 24-page catalogue for a Depok flower shop: 16 product pages, JSON-LD, WhatsApp ordering, no backend.</p>
+            <p class="stack">HTML, CSS, JavaScript</p>
+          </a>
+        </li>
+        <li class="more" data-rise>
+          <a href="https://github.com/Amiya23">
+            <span class="more-k">Open source</span>
+            <span class="more-t">Every project on this page is public.</span>
+            <span class="more-a">Amiya23 on GitHub<svg class="ar" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-      const featuredRepos = ["pawonku_web", "vehicle-tracker", "InventoryPro", "MoneyMate"];
+  <section class="section section--lilac" id="mobile" aria-labelledby="mob-h">
+    <div class="wrap">
+      <header class="sec-head" data-rise>
+        <div>
+          <p class="sec-k">02 &mdash; Mobile apps</p>
+          <h2 id="mob-h">Mobile</h2>
+        </div>
+        <p class="sec-note">Two Kotlin apps, both offline-first. Room storage, MVVM, and WorkManager reminders.</p>
+      </header>
+      <ul class="cards cards--two">
+        <li class="card" data-rise>
+          <a href="https://github.com/Amiya23/MoneyMate">
+            <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="images/cards/moneymate.jpg" alt="Four MoneyMate screens: balance, transactions, wallets and settings" width="1200" height="750" decoding="async"></div>
+            <h3>MoneyMate<svg class="ar" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></h3>
+            <p>Offline wallet: wallets, income, expenses and a monthly summary, stored in Room with MVVM and Flow.</p>
+            <p class="stack">Kotlin, Jetpack Compose, Room, MVVM</p>
+          </a>
+        </li>
+        <li class="card" data-rise>
+          <a href="https://github.com/Amiya23/vehicle-tracker-apk">
+            <div class="shot"><div class="bar"><i></i><i></i><i></i></div><img src="images/cards/vehicle-apk.jpg" alt="Vehicle Tracker app icon" width="1200" height="750" decoding="async"></div>
+            <h3>Vehicle Tracker Android<svg class="ar" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></h3>
+            <p>Offline maintenance tracker: intervals by KM or month, service history, WorkManager reminders, local backup.</p>
+            <p class="stack">Kotlin, Jetpack Compose, Room</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
 
-      const repoTech = {
-        pawonku_web: {
-          category: "Web Development",
-          tech: ["PHP", "MySQL", "Bootstrap"],
-        },
+  <section class="contact" id="contact" aria-labelledby="c-h">
+    <div class="wrap contact__in">
+      <div class="contact__text" data-rise>
+        <p class="sec-k sec-k--light">03 &mdash; Say hello</p>
+        <h2 id="c-h">Contact</h2>
+        <p>If you're hiring, or you've got something that needs building, email me. I read it every day, and the CV has the dates, the stack and the parts this page skips.</p>
+        <div class="actions" data-rise>
+          <a class="btn btn--gold" href="mailto:pradikabizz@gmail.com">Email me<svg class="ar" viewBox="0 0 12 12" aria-hidden="true"><path d="M1 6h9M6.5 2.5 10 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="btn btn--ghost" href="assets/CV_Dhiandra_Pradika.pdf">Download the CV</a>
+        </div>
+      </div>
+      <div class="contact__card" data-rise>
+        <p class="contact__label">Write to</p>
+        <a class="contact__mail" href="mailto:pradikabizz@gmail.com">pradikabizz@gmail.com</a>
+        <p class="contact__meta">East Jakarta, Indonesia. GMT+7.</p>
+      </div>
+      <div class="foot" data-rise>
+        <p>Dhiandra Pradika, East Jakarta, Indonesia. &copy; 2026</p>
+        <nav aria-label="Elsewhere">
+          <a href="https://github.com/Amiya23">GitHub</a>
+          <a href="https://www.linkedin.com/in/dhiandra-pradika-6a8a92289/">LinkedIn</a>
+          <a href="assets/CV_Dhiandra_Pradika.pdf">CV</a>
+        </nav>
+      </div>
+    </div>
+  </section>
+</main>
 
-        "vehicle-tracker": {
-          category: "Web Development",
-          tech: ["Laravel", "MySQL", "Tailwind"],
-        },
+<script>
+(function(){
+  var nav = document.getElementById('nav');
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('menu');
+  var onScroll = function(){ nav.classList.toggle('is-stuck', window.scrollY > 8); };
+  onScroll(); addEventListener('scroll', onScroll, { passive: true });
+  burger.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  var links = [].slice.call(menu.querySelectorAll('a'));
+  var secs = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  var current = -1;
+  var spy = function(){
+    var line = window.scrollY + nav.offsetHeight + Math.round(innerHeight * 0.28);
+    var found = -1;
+    for (var i = 0; i < secs.length; i++) {
+      var el = secs[i];
+      if (el && el.getBoundingClientRect().top + window.scrollY <= line) found = i;
+    }
+    if (window.scrollY < 40) found = -1;
+    if (found !== current) {
+      current = found;
+      links.forEach(function(a, j){ a.classList.toggle('is-active', j === found); });
+    }
+  };
+  spy();
+  addEventListener('scroll', spy, { passive: true });
+  addEventListener('resize', spy);
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(){ spy(); }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
+    secs.forEach(function(el){ if (el) io.observe(el); });
+  }
+  menu.addEventListener('click', function(e){
+    if (e.target.tagName === 'A') { menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+  });
 
-        InventoryPro: {
-          category: "Web Development",
-          tech: ["Laravel", "MySQL", "Tailwind"],
-        },
-
-        MoneyMate: {
-          category: "Mobile Development",
-          tech: ["Kotlin", "Jetpack Compose", "Room", "MVVM"],
-        },
+  try {
+    // motion: the hero arrives once on load (CSS), the rest on its way into view (observer)
+    var rise = [].slice.call(document.querySelectorAll('[data-rise]'));
+    var heroRise = rise.filter(function(el){ return !!el.closest('.hero'); });
+    var rest = rise.filter(function(el){ return !el.closest('.hero'); });
+    heroRise.forEach(function(el, i){ el.style.setProperty('--d', i); });
+    rest.forEach(function(el){
+      var d = 0;
+      if (el.parentNode && el.parentNode.classList && el.parentNode.classList.contains('cards')) {
+        d = [].indexOf.call(el.parentNode.children, el) % 3;
+      }
+      el.style.setProperty('--d', d);
+    });
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)');
+    if (reduce.matches) {
+      rise.forEach(function(el){ el.classList.add('in'); });
+    } else {
+      setTimeout(function(){
+        heroRise.forEach(function(el){ el.classList.add('in'); });
+      }, 40);
+      var revealEl = function(el){ if (!el.classList.contains('in')) el.classList.add('in'); };
+      var revealInView = function(){
+        var h = innerHeight;
+        rest.forEach(function(el){
+          if (el.classList.contains('in')) return;
+          var r = el.getBoundingClientRect();
+          if (r.top < h * 0.92 && r.bottom > -40) revealEl(el);
+        });
       };
-
-      const repoImages = {
-        pawonku_web: "https://raw.githubusercontent.com/Amiya23/pawonku_web/main/preview.jpeg",
-
-        "vehicle-tracker": "https://raw.githubusercontent.com/Amiya23/vehicle-tracker/main/preview.jpeg",
-
-        InventoryPro: "https://raw.githubusercontent.com/Amiya23/InventoryPro/main/preview.jpeg",
-
-        MoneyMate: "https://raw.githubusercontent.com/Amiya23/MoneyMate/master/preview.jpg",
-      };
-
-      let currentFilter = "all";
-
-      const repoContainer = document.getElementById("repo-container");
-
-      function escapeHtml(value) {
-        return String(value).replace(/[&<>"']/g, (char) => {
-          return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char];
-        });
-      }
-
-      /* Reveal on scroll.
-         Only elements that start below the fold are hidden, so
-         content already on screen stays visible even if this
-         script never runs. The sweep runs on a frame loop, which
-         is reliable regardless of how the page is scrolled, and
-         stops itself as soon as nothing is left to reveal. */
-
-      const revealEls = [];
-
-      let revealRunning = false;
-
-      function revealNow(element) {
-        element.classList.remove("reveal-armed");
-
-        element.classList.add("is-visible");
-      }
-
-      function observeReveal(element) {
-        if (element.getBoundingClientRect().top > window.innerHeight * 0.9) {
-          element.classList.add("reveal-armed");
-        }
-
-        revealEls.push(element);
-
-        kickReveals();
-      }
-
-      function sweepReveals() {
-        const trigger = window.innerHeight * 0.92;
-
-        for (let i = revealEls.length - 1; i >= 0; i--) {
-          const element = revealEls[i];
-
-          if (element.getBoundingClientRect().top < trigger) {
-            revealNow(element);
-
-            revealEls.splice(i, 1);
-          }
-        }
-
-        if (revealEls.length) {
-          window.requestAnimationFrame(sweepReveals);
-        } else {
-          revealRunning = false;
-        }
-      }
-
-      function kickReveals() {
-        if (!revealRunning) {
-          revealRunning = true;
-
-          window.requestAnimationFrame(sweepReveals);
-        }
-      }
-
-      document.querySelectorAll("[data-reveal]").forEach(observeReveal);
-
-      async function loadRepos() {
-        repoContainer.innerHTML = '<p class="loading">Loading projects...</p>';
-
-        try {
-          const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated`);
-
-          const repos = await response.json();
-
-          repos.sort((a, b) => featuredRepos.indexOf(a.name) - featuredRepos.indexOf(b.name));
-
-          const filteredRepos = repos
-            .filter((repo) => !repo.fork && featuredRepos.includes(repo.name))
-            .filter((repo) => {
-              if (currentFilter === "all") {
-                return true;
-              }
-
-              return repoTech[repo.name]?.category === currentFilter;
-            });
-
-          repoContainer.innerHTML = "";
-
-          if (!filteredRepos.length) {
-            repoContainer.innerHTML = '<p class="no-projects">No projects in this category.</p>';
-
-            return;
-          }
-
-          filteredRepos.forEach((repo) => {
-            const project = repoTech[repo.name] ?? { category: "Project", tech: [] };
-
-            const card = document.createElement("article");
-
-            card.className = "project-card";
-
-            card.setAttribute("data-reveal", "");
-
-            card.innerHTML = `
-          <div class="project-media">
-
-            <img
-              class="project-img"
-              src="${repoImages[repo.name]}"
-              alt="${escapeHtml(repo.name)} preview"
-              loading="lazy"
-              decoding="async"
-              onerror="this.closest('.project-media').classList.add('is-empty');"
-            >
-
-          </div>
-
-          <div class="project-body">
-
-            <span class="project-category">
-              ${escapeHtml(project.category)}
-            </span>
-
-            <h3>${escapeHtml(repo.name)}</h3>
-
-            <p>
-              ${escapeHtml(repo.description ?? "No description provided.")}
-            </p>
-
-            <div class="project-badges">
-              ${project.tech.map((tech) => `<span class="badge">${escapeHtml(tech)}</span>`).join("")}
-            </div>
-
-            <a
-              class="project-link"
-              href="${repo.html_url}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Repository
-              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-            </a>
-
-          </div>
-        `;
-
-            repoContainer.appendChild(card);
-
-            observeReveal(card);
+      if ('IntersectionObserver' in window) {
+        var rio = new IntersectionObserver(function(entries){
+          entries.forEach(function(en){
+            if (!en.isIntersecting) return;
+            revealEl(en.target);
+            rio.unobserve(en.target);
           });
-
-          /* Repos without a usable preview image would otherwise
-             leave an empty media box, so collapse those. */
-
-          repoContainer.querySelectorAll(".project-img").forEach((img) => {
-            const collapse = () => img.closest(".project-media")?.classList.add("is-empty");
-
-            img.addEventListener("error", collapse);
-
-            if (img.complete && img.naturalWidth === 0) {
-              collapse();
-            } else {
-              img.addEventListener("load", () => {
-                if (img.naturalWidth === 0) {
-                  collapse();
-                }
-              });
-            }
-          });
-        } catch (error) {
-          repoContainer.innerHTML = '<p class="no-projects">Failed to load repositories.</p>';
-
-          console.error(error);
-        }
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+        rest.forEach(function(el){ rio.observe(el); });
       }
-
-      /* Project Filter */
-
-      document.querySelectorAll(".project-filter").forEach((button) => {
-        button.addEventListener("click", () => {
-          document.querySelectorAll(".project-filter").forEach((btn) => {
-            btn.classList.remove("active");
-          });
-
-          button.classList.add("active");
-
-          currentFilter = button.dataset.filter;
-
-          loadRepos();
-        });
-      });
-
-      loadRepos();
-
-      /* Scroll progress + active nav link */
-
-      const navHeight = 68;
-
-      const progressBar = document.getElementById("scroll-progress");
-
-      const navLinks = Array.from(document.querySelectorAll(".nav-links a"));
-
-      const sectionIds = ["home", "skills", "featured-project", "projects", "contact"];
-
-      function onScroll() {
-        const scrolled = window.scrollY;
-
-        const max = document.documentElement.scrollHeight - window.innerHeight;
-
-        progressBar.style.width = max > 0 ? `${Math.min(100, (scrolled / max) * 100)}%` : "0%";
-
-        let current = "home";
-
-        sectionIds.forEach((id) => {
-          const element = document.getElementById(id);
-
-          if (element && element.getBoundingClientRect().top <= navHeight + 80) {
-            current = id;
-          }
-        });
-
-        /* At the very bottom the last section may never reach the
-           offset, so pin it to the final section instead. */
-
-        if (scrolled >= max - 2) {
-          current = sectionIds[sectionIds.length - 1];
-        }
-
-        if (current === "projects") {
-          current = "featured-project";
-        }
-
-        navLinks.forEach((link) => {
-          link.classList.toggle("is-active", link.getAttribute("href") === `#${current}`);
-        });
-      }
-
-      let ticking = false;
-
-      window.addEventListener(
-        "scroll",
-        () => {
-          if (!ticking) {
-            ticking = true;
-
-            window.requestAnimationFrame(() => {
-              onScroll();
-
-              ticking = false;
-            });
-          }
-        },
-        { passive: true }
-      );
-
-      window.addEventListener("resize", onScroll);
-
-      onScroll();
-
-      /* Footer year */
-
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+      addEventListener('scroll', revealInView, { passive: true });
+      addEventListener('resize', revealInView);
+      setTimeout(revealInView, 120);
+    }
+  } catch (err) {
+    [].forEach.call(document.querySelectorAll('[data-rise]'), function(el){ el.classList.add('in'); });
+  }
+})();
+</script>
+</body>
 </html>
